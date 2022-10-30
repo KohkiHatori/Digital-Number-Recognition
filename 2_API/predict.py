@@ -25,12 +25,9 @@ class Prediction_maker:
 
     def main(self):
         """
-        @para: 
-        1.image_data: 生の画像データ
-        2.path_to_model: Dockerコンテナの中のモデルへのパス
         @return:
-        画像から読み取られた数字のstring
-        """ 
+        A string of numbers read from the input image data.
+        """
         res = inference_detector(self.model, self.image_data)
         resdf, _ = llib.mmdet_util.parse_res(res, confidence_thr=self.confidence)
         result = self.convert_to_numbers(resdf)
