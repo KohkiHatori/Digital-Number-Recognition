@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta http-qeuiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Fastapi alcohol api test</title>
+    <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="/static/js/post.js"></script>
+    <script src="/static/js/hs.js"></script>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+<!--File selection button-->
+<div id="outer">
+  <div class="file-upload">
+    <button class="btn btn-primary" id="post" onclick="show_fix()">Post</button>
+    <div class="image-upload-wrap">
+      <form enctype="multipart/form-data" method="post">
+        <input type="file" class="file-upload-input" name="userfile" accept="image/*" onchange="readURL(this);">
+      </form>
+      <div class="drag-text">
+      <h3>Drag and drop a file or select add Image</h3>
+    </div>
+    </div>
+    <div class="file-upload-content">
+      <canvas id="canvas" width="0" height="0" class="file-upload-image"></canvas>
+      <div class="image-title-wrap">
+        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+      </div>
+    </div>
+    <br>
+    <div class="result-box">
+      <h2 id="result"></h2>
+      <button class="btn btn-primary" id="fix" onclick="send_data()" class="remove-image">Fix</button>
+    </div>
+  </div>
+  <!--Upload start button-->
+</div>
+</body>
+</html>
