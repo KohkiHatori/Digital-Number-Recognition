@@ -1,4 +1,4 @@
-# Alcohol Detection System for Transportation Safety 🚛🔍
+# Alcohol Detection System for Transportation Safety 🚛
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.68+-green.svg)](https://fastapi.tiangolo.com)
