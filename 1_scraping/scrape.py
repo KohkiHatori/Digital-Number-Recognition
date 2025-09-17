@@ -1,5 +1,11 @@
 """
-Thid code fetches images containing digital numbers from the Internet.
+Web Scraping Module for Digital Display Images
+
+This module scrapes Google Images to collect training data for the alcohol
+detection ML model. It searches for various digital displays (alcohol checkers,
+digital clocks, calculators, etc.) and downloads images for manual labeling.
+
+Developed for ML training data collection during internship at Second Xight Analytica.
 """
 
 from bs4 import BeautifulSoup
@@ -29,14 +35,24 @@ US_params = {
     }
 
 def get_html(word, params):
+    """
+    Fetch HTML content from Google Images search.
+
+    Args:
+        word: Search term for Google Images
+        params: URL parameters for the search
+
+    Returns:
+        requests.Response: HTTP response from Google Images
+    """
     headers = {
-        "User-Agent":USER_AGENT
+        "User-Agent": USER_AGENT
     }
     params["q"] = word
     return requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
 
 def make_soup(html):
-    return BeautifulSoup(html.text, "lxml")  
+    return BeautifulSoup(html.text, "lxml")
 
 def extract_image_data(script_tags):
     images_data = "".join(re.findall(r"AF_initDataCallback\(([^<]+)\);", str(script_tags)))
@@ -58,7 +74,7 @@ def get_full_res(no_thumbnails):
         full_res_image = bytes(not_fixed, "ascii").decode("unicode-escape")
         full_res_images.append(full_res_image)
     return full_res_images
-    
+
 def save(image_url, index, parent_index):
     print(f"Downloading image{index} ...")
     opener= build_opener(https_handler)
@@ -87,15 +103,24 @@ def is_japanese(word):
     return False
 
 def main():
+    """
+    Main scraping pipeline.
+
+    Iterates through search terms, determines language, and downloads
+    images from Google Images for ML training data collection.
+    """
     for parent_index, word in enumerate(TO_SEARCH):
+        print(f"Scraping images for: {word}")
+
+        # Choose appropriate language parameters
         if is_japanese(word):
             html = get_html(word, JP_params)
         else:
             html = get_html(word, US_params)
+
+        # Parse HTML and download images
         soup = make_soup(html)
-        get_original_images(soup, parent_index+10)
+        get_original_images(soup, parent_index + 10)
 
 if __name__ == "__main__":
     main()
-
-

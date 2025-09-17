@@ -25,11 +25,11 @@ This project was developed during my 2-week ML engineering internship at **Secon
                                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                     Deployment Pipeline                         │
-├─────────────────┬─────────────────┬─────────────────────────────┤
-│   FastAPI       │   Web Frontend  │     Annotation Tool         │
-│   Backend       │   (HTML/CSS/JS) │   (Error Correction)        │
-│                 │                 │                             │
-└─────────────────┴─────────────────┴─────────────────────────────┘
+├───────────────────────────────┬─────────────────────────────────┤
+│         FastAPI               │        Web Frontend             │
+│         Backend               │       (HTML/CSS/JS)             │
+│                               │                                 │
+└───────────────────────────────┴─────────────────────────────────┘
 ```
 
 ## 🔧 Technology Stack
@@ -59,7 +59,6 @@ This project was developed during my 2-week ML engineering internship at **Secon
 - **FastAPI backend** with async image processing endpoints
 - **Drag-and-drop web interface** for easy image uploads
 - **Real-time prediction** display with confidence scores
-- **Annotation correction tool** for improving model accuracy
 - Image storage and result logging capabilities
 
 ## 🎯 Key Technical Challenges & Solutions
@@ -91,21 +90,21 @@ This project was developed during my 2-week ML engineering internship at **Secon
 - ✅ Built complete ML pipeline from data collection to inference
 - ✅ Achieved high accuracy on digit recognition tasks
 - ✅ Created functional web interface for demonstration
-- ✅ Built annotation correction tool for model improvement
+- ✅ Implemented comprehensive data collection and labeling pipeline
 
 ## 🎥 Demo Features
 
 ### Web Interface
 - **Drag-and-drop image upload** with real-time preview
 - **Prediction display** showing detected digits and confidence scores
-- **Interactive annotation tool** for model improvement and validation
+- **Clean, intuitive interface** for easy image processing
 - **Responsive design** built with vanilla HTML, CSS, and JavaScript
 
 ### Backend API
 - **FastAPI endpoints** for image processing and prediction
 - **Asynchronous processing** for handling multiple image uploads
 - **Model inference pipeline** with configurable confidence thresholds
-- **Data logging and storage** for continuous model improvement
+- **Image storage and logging** capabilities
 
 *Note: Trained model files are not included in the repository due to size constraints (stored in `3_model/` - see `.gitignore`).*
 
@@ -113,19 +112,26 @@ This project was developed during my 2-week ML engineering internship at **Secon
 
 ```
 sxi/
-├── 1_scraping/          # Web scraping for data collection
-│   └── scrape.py       # Google Images scraper
-├── 2_API/              # FastAPI backend & frontend
-│   ├── alcohol_api.py  # Main API server
-│   ├── predict.py      # Prediction logic
-│   ├── templates/      # HTML templates
-│   ├── static/         # CSS/JS assets
-│   ├── images/         # Sample images
-│   └── llib/           # MMDetection utilities
-├── 3_model/            # Trained model files (excluded from repo)
-│   ├── latest.pth      # Latest checkpoint (not in repo)
-│   └── epoch_15.pth    # Specific epoch checkpoint (not in repo)
-└── sxi_env/            # Virtual environment
+├── README.md              # Project documentation
+├── requirements.txt       # Python dependencies
+├── setup_instructions.md  # Setup and installation guide
+├── demo/                  # Portfolio demonstration assets
+│   ├── screenshots/       # Web interface screenshots
+│   ├── sample_images/     # Sample alcohol detector images
+│   └── architecture/      # System diagrams
+├── 1_scraping/           # Web scraping for data collection
+│   └── scrape.py        # Google Images scraper
+├── 2_API/               # FastAPI backend & frontend
+│   ├── alcohol_api.py   # Main API server
+│   ├── predict.py       # Prediction logic
+│   ├── templates/       # HTML templates
+│   ├── static/          # CSS/JS assets
+│   ├── images/          # Sample images
+│   └── llib/            # MMDetection utilities
+├── 3_model/             # Trained model files (excluded from repo)
+│   ├── latest.pth       # Latest checkpoint (not in repo)
+│   └── epoch_15.pth     # Specific epoch checkpoint (not in repo)
+└── sxi_env/             # Virtual environment
 ```
 
 ## 🔍 API Endpoints
@@ -134,8 +140,7 @@ sxi/
 |----------|--------|-------------|
 | `/upload` | GET | Main upload interface |
 | `/process` | POST | Process uploaded images |
-| `/fix` | GET | Annotation correction tool |
-| `/save_img` | POST | Save images for labeling |
+| `/save_img` | POST | Save images for storage |
 | `/test` | GET | API health check |
 
 ## 🎓 Learning Outcomes
@@ -165,13 +170,6 @@ Location: Otemachi, Tokyo, Japan
 Industry: ML/Data Science Startup  
 Internship Duration: 2 weeks (Summer 2022)  
 Role: ML Engineer Intern
-
-## 📞 Contact
-
-**Kohki Hatori**  
-- Email: [khatori@bu.edu]
-<!-- - LinkedIn: [Your LinkedIn Profile]
-- Portfolio: [Your Portfolio Website] -->
 
 ---
 
