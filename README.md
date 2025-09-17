@@ -12,6 +12,9 @@ This project was developed during my 2-week ML engineering internship at **Secon
 
 **What it does**: Automatically reads digital numbers from alcohol detector displays using computer vision and determines whether the detected alcohol level exceeds legal limits.
 
+## Demo video
+https://github.com/user-attachments/assets/f9ada31d-ca15-42c7-a9e0-2e8fdcf185c6
+
 ## 🏗️ System Architecture
 
 ```
@@ -91,20 +94,6 @@ This project was developed during my 2-week ML engineering internship at **Secon
 - ✅ Achieved high accuracy on digit recognition tasks
 - ✅ Created functional web interface for demonstration
 - ✅ Implemented comprehensive data collection and labeling pipeline
-
-## 🎥 Demo Features
-
-### Web Interface
-- **Drag-and-drop image upload** with real-time preview
-- **Prediction display** showing detected digits 
-- **Responsive design** built with vanilla HTML, CSS, and JavaScript
-
-
-### Backend API
-- **FastAPI endpoints** for image processing and prediction
-
-![Demo](demo/screenshots/1.png)
-
 
 
 *Note: Trained model files are not included in the repository due to size constraints (stored in `3_model/` - see `.gitignore`).*
