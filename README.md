@@ -99,8 +99,12 @@ This project was developed during my 2-week ML engineering internship at **Secon
 - **Prediction display** showing detected digits 
 - **Responsive design** built with vanilla HTML, CSS, and JavaScript
 
+![Web Interface Demo](demo/screenshots/1.png)
+
 ### Backend API
 - **FastAPI endpoints** for image processing and prediction
+
+
 
 *Note: Trained model files are not included in the repository due to size constraints (stored in `3_model/` - see `.gitignore`).*
 
