@@ -96,15 +96,11 @@ This project was developed during my 2-week ML engineering internship at **Secon
 
 ### Web Interface
 - **Drag-and-drop image upload** with real-time preview
-- **Prediction display** showing detected digits and confidence scores
-- **Clean, intuitive interface** for easy image processing
+- **Prediction display** showing detected digits 
 - **Responsive design** built with vanilla HTML, CSS, and JavaScript
 
 ### Backend API
 - **FastAPI endpoints** for image processing and prediction
-- **Asynchronous processing** for handling multiple image uploads
-- **Model inference pipeline** with configurable confidence thresholds
-- **Image storage and logging** capabilities
 
 *Note: Trained model files are not included in the repository due to size constraints (stored in `3_model/` - see `.gitignore`).*
 
